@@ -55,7 +55,10 @@ RUN set -ex \
     && pip install pyOpenSSL \
     && pip install ndg-httpsclient \
     && pip install pyasn1 \
-    && pip install apache-airflow[crypto,celery,postgres,hive,jdbc]==$AIRFLOW_VERSION \
+    && pip install pymysql \
+    && pip install psycopg2 \
+    && pip install sqlalchemy \
+    && pip install apache-airflow[crypto,celery,postgres,hive,jdbc,mysql,slack]==$AIRFLOW_VERSION \
     && pip install celery[redis]==3.1.17 \
     && apt-get purge --auto-remove -yqq $buildDeps \
     && apt-get clean \
